@@ -1,0 +1,14 @@
+syntax = 'proto3';
+
+message Id {
+    int32 user     = 1 ;
+}
+//Define a message to hold the user information :
+message User{
+    string name      = 1 ;
+}
+
+//Define the service :
+service UserService{
+    rpc get_user_by_id(Id) returns (User){}
+}

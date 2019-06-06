@@ -1,0 +1,9 @@
+[uwsgi]
+http = :8000
+chdir = ../../../src
+virtualenv = /../../VENV
+wsgi-file = app.py
+callable = app
+processes = 4
+threads = 2
+stats = 127.0.0.1:9191

@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  title: Nina Rest API
+  description: API Nina Code Test.
+  version: 1.0.0
+
+host: http://127.0.0.1:8000
+basePath: /api/v1
+schemes:
+  - http
+
+paths:
+  /user/register:
+    post:
+      summary: Returns status for register user operation.
+      description: Register a new user on API.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+  /user/auth:
+    post:
+      summary: Returns a token to validate user.
+      description: Authenticate user and create token.
+      security:
+        - basicAuth: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+        404:
+          description: Not found
+  /denounce/create:
+    post:
+      summary: Returns status for register new denounce.
+      description: Register a new denounce on API.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+
+    get:
+      summary: Returns a list of registred denounces.
+      description: List all denounces on API.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+
+  /denounce/complete:
+    put:
+      summary: Returns a status from denounce update.
+      description: Update a denounce with description and id user
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request

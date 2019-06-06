@@ -1,0 +1,5 @@
+uwsgi.ini
+jwt-key
+jwt-key.pub
+sqlite.db
+venv/
